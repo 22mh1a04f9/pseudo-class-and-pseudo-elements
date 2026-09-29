@@ -1,0 +1,355 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>10000 Coders - Courses</title>
+
+    <style>
+
+        /* =========================
+           BASIC PAGE STYLING
+        ========================== */
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f6ff;
+            color: #222;
+        }
+
+        /* =========================
+           MAIN HEADING
+           ::before and ::after
+        ========================== */
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+            margin: 25px;
+        }
+
+        h1::before {
+            content: "★ ";
+            color: orange;
+        }
+
+        h1::after {
+            content: " ★";
+            color: orange;
+        }
+
+        /* =========================
+           NAVIGATION MENU
+        ========================== */
+
+        nav {
+            background-color: darkblue;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        /* :hover - navigation appearance changes */
+
+        nav a:hover {
+            background-color: orange;
+            color: black;
+        }
+
+        /* :active - navigation item while clicking */
+
+        nav a:active {
+            background-color: red;
+            color: white;
+        }
+
+        /* =========================
+           INSTITUTE DESCRIPTION
+           ::first-letter
+           ::first-line
+        ========================== */
+
+        .description {
+            width: 80%;
+            margin: 25px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+
+        .description::first-letter {
+            font-size: 35px;
+            font-weight: bold;
+            color: darkblue;
+        }
+
+        .description::first-line {
+            font-weight: bold;
+            color: darkblue;
+        }
+
+        /* =========================
+           COURSE SECTION
+        ========================== */
+
+        .course-section {
+            width: 80%;
+            margin: 25px auto;
+            background-color: white;
+            padding: 20px;
+            border: 2px solid darkblue;
+            border-radius: 10px;
+        }
+
+        .course-section h2 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        /* =========================
+           COURSE LIST
+        ========================== */
+
+        .courses {
+            padding: 0;
+            list-style: none;
+        }
+
+        .courses li {
+            background-color: #e8efff;
+            border: 2px solid #b8c8ee;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+
+        /* :first-child */
+
+        .courses li:first-child {
+            background-color: #d5f5e3;
+            border-color: green;
+            font-weight: bold;
+        }
+
+        /* :last-child */
+
+        .courses li:last-child {
+            background-color: #ffe0e0;
+            border-color: red;
+            font-weight: bold;
+        }
+
+        /* :nth-child - selected course */
+
+        .courses li:nth-child(3) {
+            background-color: #fff3cd;
+            border: 3px solid orange;
+            color: #8a4b00;
+            font-weight: bold;
+        }
+
+        /* :not() - style all except third course */
+
+        .courses li:not(:nth-child(3)) {
+            letter-spacing: 0.5px;
+        }
+
+        /* =========================
+           COURSE HOVER
+        ========================== */
+
+        .courses li:hover {
+            background-color: #cce5ff;
+            transform: scale(1.02);
+        }
+
+        /* =========================
+           REGISTRATION FORM
+        ========================== */
+
+        .form-section {
+            width: 80%;
+            margin: 25px auto 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid darkblue;
+        }
+
+        .form-section h2 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 95%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 2px solid #aaa;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        /* :focus - input border changes */
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border: 3px solid blue;
+            background-color: #eef5ff;
+        }
+
+        /* =========================
+           BUTTON
+           :hover and :active
+        ========================== */
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: orange;
+            color: black;
+        }
+
+        /* Different appearance while button is being clicked */
+
+        button:active {
+            background-color: red;
+            color: white;
+            transform: scale(0.90);
+        }
+
+        /* =========================
+           TEXT SELECTION
+           ::selection
+        ========================== */
+
+        ::selection {
+            background-color: yellow;
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- MAIN HEADING -->
+
+    <h1>10000 Coders – Courses</h1>
+
+
+    <!-- NAVIGATION MENU -->
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#register">Register</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+
+    <!-- INSTITUTE DESCRIPTION -->
+
+    <div class="description" id="home">
+
+        <p>
+            10000 Coders is a coding training institute that helps students
+            develop programming and technical skills. It provides practical
+            training in different technologies and prepares students for
+            software development careers.
+        </p>
+
+    </div>
+
+
+    <!-- COURSE SECTION -->
+
+    <div class="course-section" id="courses">
+
+        <h2>Available Courses</h2>
+
+        <ul class="courses">
+
+            <li>Python Full Stack Development</li>
+
+            <li>Java Full Stack Development</li>
+
+            <li>Web Development</li>
+
+            <li>Data Analytics</li>
+
+            <li>Cloud Computing</li>
+
+            <li>Software Testing</li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- REGISTRATION FORM -->
+
+    <div class="form-section" id="register">
+
+        <h2>Registration Form</h2>
+
+        <form>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+
+            <label for="course">Select Course:</label>
+
+            <select id="course">
+                <option>Python Full Stack</option>
+                <option>Java Full Stack</option>
+                <option>Web Development</option>
+                <option>Data Analytics</option>
+                <option>Cloud Computing</option>
+                <option>Software Testing</option>
+            </select>
+
+            <button type="submit">Register Now</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
+```
